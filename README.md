@@ -8,7 +8,7 @@ A widget that displays GIFs in Tkinter.
 
 ### 2024/7/14更新：
 
-1. AnimatedGif类新增play_end_func形参，以便在动图播放结束时回调处理。
+1. AnimatedGif类新增play_end_func形参，以便在动图播放结束时回调处理。感谢B站@只是一个球_提出的建议
 2. 以下改动（未全部列出）使控件可以修改动图，也可以在指定动图前先创建控件：
     * AnimatedGif类file_path, play_mode形参变为默认值形参。
     * 设置动图的部分移至set_gif()方法。
@@ -24,7 +24,7 @@ A widget that displays GIFs in Tkinter.
 
 ### 2024/7/28更新：
 
-* 修复动图在播放时透明颜色不能正确显示的BUG。
+* 修复动图在播放时透明颜色不能正确显示的BUG。感谢B站@只是一个球_
 * 添加帧持续时间缺失时的处理。
 
 ### 2025/2/21更新：

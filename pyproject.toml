@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TkGifWidget"
+version = "0.0.3"
+authors = [
+  { name="JellyfisHawthorn" },
+]
+description = "A widget that displays GIFs in Tkinter"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "pillow",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "License :: Public Domain",
+]
+[project.urls]
+Homepage = "https://github.com/JellyfisHawthorn/TkGifWidgit"
+Issues = "https://github.com/JellyfisHawthorn/TkGifWidgit/issues"
+
