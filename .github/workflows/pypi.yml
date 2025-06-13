@@ -1,3 +1,0 @@
-name: pypi verify
-permissions:
-  id-token: write
