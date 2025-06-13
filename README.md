@@ -1,33 +1,128 @@
+# TkGifWidget
+
 A widget that displays GIFs in Tkinter.  
 一个能在Tkinter中显示GIF动图的控件。
 
-介绍文章：https://www.bilibili.com/read/cv31300353/  
-导入方式： from TkGifWidget import *或import TkGifWidget
+![GitHub License](https://img.shields.io/github/license/JellyfisHawthorn/TkGifWidgit)
+![PyPI - Version](https://img.shields.io/pypi/v/TkGifWidget)
+![dependce](https://img.shields.io/badge/dependence-Pillow-brightgreen?link=https%3A%2F%2Fgithub.com%2Fpython-pillow%2FPillow
+)
 
-缺陷： 因为Tk的图像加载方式，极少部分透明度不规则的GIF动图加载速度会极慢。
 
-### 2024/7/14更新：
+## Language
 
-1. AnimatedGif类新增play_end_func形参，以便在动图播放结束时回调处理。感谢B站@只是一个球_提出的建议
-2. 以下改动（未全部列出）使控件可以修改动图，也可以在指定动图前先创建控件：
-    * AnimatedGif类file_path, play_mode形参变为默认值形参。
-    * 设置动图的部分移至set_gif()方法。
-    * bg_img属性只读，且值类型变为Image对象而非PhotoImage。
-    * 使用bg_imgtk只读属性获取PhotoImage对象。
-    * 新增set_bg_img()方法用于设置当前背景图。（若想指定默认背景图请修改default_bg属性）
-    * 处理背景图部分移至apply_bg_func()方法。
-    * 新增set_play_mode()方法用于设置播放模式。
-    * AnimatedGif类bg_path属性名称修改为default_bg（即使这样不符合向下兼容）。 default_bg用于指定默认的背景图，值可以是路径或Image对象。
-3. 修复调用end_play()后，在小于duration时间内再调用start_play()会使播放速度加倍的BUG。
-4. 修改内部图像容器的borderwidth为0以确保无边框。
-5. AnimatedGif类新增nogif_bg形参，用于指定没有动图时的背景图。
+- [English](#english)
+- [简体中文](#简体中文)
 
-### 2024/7/28更新：
+---
 
-* 修复动图在播放时透明颜色不能正确显示的BUG。感谢B站@只是一个球_
-* 添加帧持续时间缺失时的处理。
+## English
 
-### 2025/2/21更新：
+### Overview
 
-* Add English translation of the module's documentation string. 为模块中的文档字符串添加英文翻译。
-* Adding the module to PyPI and GitHub. 将该模块添加到PyPI和Github上。
+This module provides a widget class called AnimatedGif, which can display GIF animations (including some other formats).
+
+The AnimatedGif widget supports setting the number of loops, the image to be displayed when the animation is not playing, and the callback function to be executed when the animation is completed, etc.
+
+In addition, the AnimatedGif widget supports three playback modes, which are:
+
+- click: background image is displayed before the animation starts, and the animation is played when clicked, and the background image is displayed again when clicked again.
+
+![click](docs\gif\en_us\click.gif)
+
+- display: the animation is played when the AnimatedGif widget is mapped, and the animation is stopped when the widget is unmapped.
+
+![display](docs\gif\en_us\display.gif)
+
+- hover: the animation is played when the mouse moves over the AnimatedGif widget, and the animation is stopped when the mouse moves out of the widget.
+
+![hover](docs\gif\en_us\hover.gif)
+
+### Installation and Import
+
+Install using pip:
+```
+pip install TkGifWidget
+```
+
+Import:
+```
+from TkGifWidget import *
+# or import TkGifWidget
+```
+
+### Usage
+example.py:
+```
+import tkinter as tk
+from TkGifWidget import AnimatedGif
+root = tk.Tk()
+# Create an AnimatedGif widget, play when displayed
+gif = AnimatedGif('../gif/example.gif', play_mode='display')
+gif.pack()
+root.mainloop()
+```
+
+For more information, please refer to the Wiki: https://github.com/JellyfisHawthorn/TkGifWidget/wiki/English
+
+### Shortcoming
+
+Because of the way Tk loads images, GIF animations with **irregular** opacity can be slow to load.
+
+---
+
+## 简体中文
+
+### 概述
+
+此模块提供了一个名为AnimatedGif的控件类，用于显示GIF动图（也支持一些其他动图格式）。
+
+动图控件支持设置动图的循环次数、未播放时显示的图片、播放完成后执行的回调函数等等。
+
+此外，动图控件支持三种播放模式，分别是：
+
+- click（点击）：点击前显示背景图，点击后播放动图，再次点击重新显示背景图。
+
+![点击](docs\gif\zh_cn\click.gif)
+
+- display（显示）：动图控件被映射时开始播放动图，取消映射时结束播放动图。
+
+![显示](docs\gif\zh_cn\display.gif)
+
+- hover：当鼠标移动到动图控件上时播放动图，移出动图控件结束播放动图。
+
+![悬停](docs\gif\zh_cn\hover.gif)
+
+### 安装和导入
+
+使用pip安装：
+```
+pip install TkGifWidget
+```
+
+导入方式：
+```
+from TkGifWidget import *
+# 或者使用import TkGifWidget
+```
+
+### 使用
+
+example.py：
+```
+import tkinter as tk
+from TkGifWidget import AnimatedGif
+root = tk.Tk()
+# 创建动图控件，显示时播放
+gif = AnimatedGif('../gif/example.gif', play_mode='display')
+gif.pack()
+root.mainloop()
+```
+
+具体请查看Wiki：https://github.com/JellyfisHawthorn/TkGifWidget/wiki/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87
+
+Bilibili上的介绍文章（版本较旧）：https://www.bilibili.com/read/cv31300353/  
+
+### 缺陷
+
+因为Tk的图像加载方式，极少部分透明度**不规则**的GIF动图加载速度会极慢。
