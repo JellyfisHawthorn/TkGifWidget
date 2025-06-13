@@ -28,15 +28,15 @@ In addition, the AnimatedGif widget supports three playback modes, which are:
 
 - click: background image is displayed before the animation starts, and the animation is played when clicked, and the background image is displayed again when clicked again.
 
-![click](docs\gif\en_us\click.gif)
+![click](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/gif/en_us/click.gif)
 
 - display: the animation is played when the AnimatedGif widget is mapped, and the animation is stopped when the widget is unmapped.
 
-![display](docs\gif\en_us\display.gif)
+![display](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/gif/en_us/display.gif)
 
 - hover: the animation is played when the mouse moves over the AnimatedGif widget, and the animation is stopped when the mouse moves out of the widget.
 
-![hover](docs\gif\en_us\hover.gif)
+![hover](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/gif/en_us/hover.gif)
 
 ### Installation and Import
 
@@ -52,7 +52,7 @@ from TkGifWidget import *
 ```
 
 ### Usage
-example.py:
+[example.py](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/case/example.py):
 ```
 import tkinter as tk
 from TkGifWidget import AnimatedGif
@@ -63,7 +63,9 @@ gif.pack()
 root.mainloop()
 ```
 
-For more information, please refer to the Wiki: https://github.com/JellyfisHawthorn/TkGifWidget/wiki/English
+For more information, please refer to the Wiki:
+
+https://github.com/JellyfisHawthorn/TkGifWidget/wiki/English
 
 ### Shortcoming
 
@@ -83,15 +85,15 @@ Because of the way Tk loads images, GIF animations with **irregular** opacity ca
 
 - click（点击）：点击前显示背景图，点击后播放动图，再次点击重新显示背景图。
 
-![点击](docs\gif\zh_cn\click.gif)
+![点击](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/gif/zh_cn/click.gif)
 
 - display（显示）：动图控件被映射时开始播放动图，取消映射时结束播放动图。
 
-![显示](docs\gif\zh_cn\display.gif)
+![显示](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/gif/zh_cn/display.gif)
 
 - hover：当鼠标移动到动图控件上时播放动图，移出动图控件结束播放动图。
 
-![悬停](docs\gif\zh_cn\hover.gif)
+![悬停](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/gif/zh_cn/hover.gif)
 
 ### 安装和导入
 
@@ -108,7 +110,7 @@ from TkGifWidget import *
 
 ### 使用
 
-example.py：
+[example.py](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/case/example.py)：
 ```
 import tkinter as tk
 from TkGifWidget import AnimatedGif
