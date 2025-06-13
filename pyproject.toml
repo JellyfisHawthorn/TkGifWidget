@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TkGifWidget"
-version = "0.0.3"
+version = "0.0.5"
 authors = [
   { name="JellyfisHawthorn" },
 ]
@@ -22,4 +22,5 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/JellyfisHawthorn/TkGifWidgit"
 Issues = "https://github.com/JellyfisHawthorn/TkGifWidgit/issues"
+Changelog = "https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/CHANGELOG.md"
 
