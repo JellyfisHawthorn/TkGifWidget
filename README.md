@@ -46,14 +46,14 @@ pip install TkGifWidget
 ```
 
 Import:
-```
+```python3
 from TkGifWidget import *
 # or import TkGifWidget
 ```
 
 ### Usage
 [example.py](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/case/example.py):
-```
+```python3
 import tkinter as tk
 from TkGifWidget import AnimatedGif
 root = tk.Tk()
@@ -103,7 +103,7 @@ pip install TkGifWidget
 ```
 
 导入方式：
-```
+```python3
 from TkGifWidget import *
 # 或者使用import TkGifWidget
 ```
@@ -111,7 +111,7 @@ from TkGifWidget import *
 ### 使用
 
 [example.py](https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/docs/case/example.py)：
-```
+```python3
 import tkinter as tk
 from TkGifWidget import AnimatedGif
 root = tk.Tk()
