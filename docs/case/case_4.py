@@ -1,4 +1,4 @@
-# 动图每次结束播放后若还会继续循环播放，则将控件边框变红300ms，否则删除动图控件
+# If the GIF will continue to loop after each end of playback, turn the border of the widget red for 300ms, otherwise delete the GIF widget.
 from tkinter import *
 from TkGifWidget import *
 root = Tk()
@@ -12,7 +12,7 @@ def func(_gif, is_continue):
         _gif.destroy()
 
 
-# 总共播放五次，每次播放完成后回调func
+# Play the GIF for 5 times, and call the func after each end of playback.
 gif = AnimatedGif(
     '../gif/Line_LtoR.gif',
     play_mode=CLICK,
