@@ -10,7 +10,7 @@ include-package-data = true
 
 [project]
 name = "TkGifWidget"
-version = "0.0.9-alpha.1"
+version = "0.0.9-alpha.2"
 authors = [
   { name="JellyfisHawthorn" },
 ]
