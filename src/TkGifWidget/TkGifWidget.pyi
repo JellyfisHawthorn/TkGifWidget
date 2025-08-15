@@ -1,13 +1,13 @@
 import tkinter as tk
 from PIL import Image, ImageTk, GifImagePlugin
 from _typeshed import StrOrBytesPath
-from typing import Literal, Callable, Iterator
+from typing import Literal, Callable, Iterator, Sequence
 
 __all__ = ['AnimatedGif', 'CLICK', 'DISPLAY', 'HOVER', 'BgFunc']
 
-CLICK: str
-DISPLAY: str
-HOVER: str
+CLICK = 'click'
+DISPLAY = 'display'
+HOVER = 'hover'
 
 
 class AnimatedGif(tk.Frame):
@@ -21,7 +21,7 @@ class AnimatedGif(tk.Frame):
     duration_iter: Iterator[int]
     play_end_func: Callable[[AnimatedGif, bool], None]
     hover_func: Callable[[AnimatedGif], None]
-    bg_func: Callable[[Image.Image], Image.Image] | list[Callable[[Image.Image], Image.Image]]
+    bg_func: Callable[[Image.Image], Image.Image] | Sequence[Callable[[Image.Image], Image.Image]]
     default_bg: StrOrBytesPath
     nogif_bg: StrOrBytesPath | Image.Image
     img_container: tk.Label
@@ -29,9 +29,9 @@ class AnimatedGif(tk.Frame):
     def __init__(
             self,
             file_path: StrOrBytesPath = None,
-            play_mode: Literal['click', 'display', 'hover'] = ...,
+            play_mode: Literal['click', 'display', 'hover'] | str = ...,
             default_bg: StrOrBytesPath = None,
-            bg_func: Callable[[Image.Image], Image.Image] | list[Callable[[Image.Image], Image.Image]] = None,
+            bg_func: Callable[[Image.Image], Image.Image] | Sequence[Callable[[Image.Image], Image.Image]] = None,
             nogif_bg: StrOrBytesPath | Image.Image = None,
             hover_func: Callable[[AnimatedGif], None] = None,
             play_end_func: Callable[[AnimatedGif, bool], None] = None,
@@ -41,7 +41,7 @@ class AnimatedGif(tk.Frame):
     ) -> None:
         ...
 
-    def set_play_mode(self, play_mode: Literal['click', 'display', 'hover']) -> None: ...
+    def set_play_mode(self, play_mode: Literal['click', 'display', 'hover'] | str) -> None: ...
 
     def set_gif(self, file_path: StrOrBytesPath) -> None: ...
 
@@ -55,7 +55,7 @@ class AnimatedGif(tk.Frame):
     def bg_imgtk(self) -> ImageTk.PhotoImage: ...
 
     @property
-    def play_mode(self) -> Literal['click', 'display', 'hover']: ...
+    def play_mode(self) -> Literal['click', 'display', 'hover'] | str: ...
 
     @play_mode.setter
     def play_mode(self, _) -> None: ...
@@ -79,7 +79,7 @@ class AnimatedGif(tk.Frame):
     def __bg_imgtk(self, _) -> None: ...
 
     @property
-    def __play_mode(self) -> Literal['click', 'display', 'hover']: ...
+    def __play_mode(self) -> Literal['click', 'display', 'hover'] | str: ...
 
     @__play_mode.setter
     def __play_mode(self, _) -> None: ...
