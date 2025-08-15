@@ -2,9 +2,8 @@
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
-[tool.mypy]
-python_version = "3.8"
-mypy_path = ["stubs"]
+[tool.setuptools.package-data]
+"TkGifWidget" = ["*.pyi", "py.typed"]
 
 [project]
 name = "TkGifWidget"
@@ -12,6 +11,7 @@ version = "0.0.7"
 authors = [
   { name="JellyfisHawthorn" },
 ]
+keywords = ['tkinter', 'gif', 'widget', 'Animated']
 description = "A widget that displays GIFs in Tkinter"
 readme = "README.md"
 requires-python = ">=3.8"
@@ -23,6 +23,7 @@ classifiers = [
     "Operating System :: OS Independent",
     "License :: Public Domain",
 ]
+
 [project.urls]
 Homepage = "https://github.com/JellyfisHawthorn/TkGifWidgit"
 Issues = "https://github.com/JellyfisHawthorn/TkGifWidgit/issues"
