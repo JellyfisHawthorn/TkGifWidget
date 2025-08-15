@@ -2,12 +2,15 @@
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
+[tool.setuptools]
+include-package-data = true
+
 [tool.setuptools.package-data]
 "TkGifWidget" = ["*.pyi", "py.typed"]
 
 [project]
 name = "TkGifWidget"
-version = "0.0.8"
+version = "0.0.9-alpha.1"
 authors = [
   { name="JellyfisHawthorn" },
 ]
@@ -28,4 +31,5 @@ classifiers = [
 Homepage = "https://github.com/JellyfisHawthorn/TkGifWidgit"
 Issues = "https://github.com/JellyfisHawthorn/TkGifWidgit/issues"
 Changelog = "https://github.com/JellyfisHawthorn/TkGifWidget/blob/main/CHANGELOG.md"
+
 
