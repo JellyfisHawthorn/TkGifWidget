@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TkGifWidget"
-version = "0.0.7"
+version = "0.0.8"
 authors = [
   { name="JellyfisHawthorn" },
 ]
