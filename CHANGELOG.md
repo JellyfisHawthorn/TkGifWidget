@@ -32,3 +32,7 @@
 * 按照[这里说的](https://github.com/Bluecloud-Seao/WarmaDesk--/pull/1)规范化项目。
 * 优化README。
 * 更新教程。
+
+### 2025/8/15更新：
+
+* 新增pyi存根文件。

@@ -1,6 +1,6 @@
 """A widget that displays GIFs in Tkinter."""
 import tkinter as tk
-from typing import Literal, Sequence
+from typing import Sequence
 from PIL import Image, ImageSequence, ImageTk, ImageDraw, ImageFilter, ImageEnhance
 
 __all__ = ['AnimatedGif', 'CLICK', 'DISPLAY', 'HOVER', 'BgFunc']
@@ -13,7 +13,7 @@ class AnimatedGif(tk.Frame):
     def __init__(
             self,
             file_path=None,
-            play_mode: Literal['click', 'display', 'hover'] = CLICK,
+            play_mode=CLICK,
             default_bg=None,
             bg_func=None,
             nogif_bg=None,
@@ -93,9 +93,9 @@ class AnimatedGif(tk.Frame):
         self.__play_mode = play_mode
         self._cbid = None
 
-        self.play_state: Literal['run', 'stop'] = 'stop'  # 指示当前播放状态
+        self.play_state = 'stop'  # 指示当前播放状态
         self.loop = loop  # GIF循环次数
-        self.remain_loop: int = -1  # 剩余的循环播放次数，-1表示无限循环播放
+        self.remain_loop = -1  # 剩余的循环播放次数，-1表示无限循环播放
         self.image_lst = []  # 每帧图像组成的列表
         self.duration_lst = []  # 每帧图像对应的持续时间组成的列表
         self.image_iter = iter([])  # 图像序列的迭代器
@@ -117,7 +117,7 @@ class AnimatedGif(tk.Frame):
         elif default_bg:
             self.set_bg_img(default_bg)
 
-    def set_play_mode(self, play_mode: Literal['click', 'display', 'hover']):
+    def set_play_mode(self, play_mode):
         """设置当前播放模式 settting the current play mode."""
         if play_mode not in ['click', 'display', 'hover']:
             raise ValueError('The value of the play_mode should be one of the click, display or hover.')
@@ -370,12 +370,12 @@ class AnimatedGif(tk.Frame):
 class BgFunc:
 
     @staticmethod
-    def darken(img: Image.Image) -> Image.Image:
+    def darken(img):
         """将图像变暗 Darken the image"""
         return ImageEnhance.Brightness(img).enhance(0.7)
 
     @staticmethod
-    def gif_sign(img: Image.Image) -> Image.Image:
+    def gif_sign(img):
         """
         在图像中间添加灰色半透明圆圈附带添加GIF文本。
         Add a gray transparent circle in the middle of the image with GIF text.
@@ -393,6 +393,6 @@ class BgFunc:
         return img
 
     @staticmethod
-    def blur(img: Image.Image) -> Image.Image:
+    def blur(img):
         """将图像模糊 Blur the image"""
         return img.filter(ImageFilter.GaussianBlur(1.5))
